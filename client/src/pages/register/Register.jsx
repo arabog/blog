@@ -36,7 +36,6 @@ export default function Register() {
                                                             Register
                                                   </button>
 
-
                                         </form>
 
                                         <button className="loginButton">
