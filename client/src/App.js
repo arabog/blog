@@ -1,6 +1,7 @@
 import Topbar from "./components/topbar/Topbar"
 // import Register from './pages/register/Register';
-import Login from "./pages/login/Login";
+// import Login from "./pages/login/Login";
+import Header from "./components/header/Header";
 
 
 function App() {
@@ -10,7 +11,9 @@ function App() {
 
 			{/* <Register /> */}
 
-			<Login />
+			{/* <Login /> */}
+
+			<Header />
 		</div>
 	);
 }
