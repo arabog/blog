@@ -1,20 +1,33 @@
+import Home from "./pages/home/Home"
 import Topbar from "./components/topbar/Topbar"
-// import Register from './pages/register/Register';
-// import Login from "./pages/login/Login";
-import Header from "./components/header/Header";
+import Register from './pages/register/Register';
+import Login from "./pages/login/Login";
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route
+} from "react-router-dom"
 
 
 function App() {
 	return (
-		<div className="App">
+		<Router>
 			<Topbar />
 
-			{/* <Register /> */}
+			<Switch>
+				<Route exact path="/">
+					<Home />
+				</Route>
 
-			{/* <Login /> */}
+				<Route path="/register">
+					<Register />
+				</Route>
 
-			<Header />
-		</div>
+				<Route path="/login">
+					<Login />
+				</Route>
+			</Switch>
+		</Router>
 	);
 }
 
