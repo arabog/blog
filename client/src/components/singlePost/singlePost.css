@@ -1,0 +1,26 @@
+.singlePost{
+          flex: 9;
+}
+
+
+.singlePostWrapper{
+          padding: 20px;
+          padding-right: 0;
+          display: flex;
+          flex-direction: column;
+}
+
+
+.singlePostInfo{
+          margin-bottom: 20px;
+          display: flex;
+          justify-content: space-between;
+          font-size: 16px;
+          color: #b39656;
+}
+
+
+/* singlePostAuthor */
+
+
+/* singlePostDate */

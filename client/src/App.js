@@ -7,7 +7,8 @@
 // 	Switch,
 // 	Route
 // } from "react-router-dom"
-import Settings  from "./pages/settings/Settings"
+// import Settings  from "./pages/settings/Settings"
+import SinglePost  from "./components/singlePost/SinglePost"
 
 
 function App() {
@@ -30,7 +31,8 @@ function App() {
 		// 	</Switch>
 		// </Router>
 		<div>
-			<Settings />
+			{/* <Settings /> */}
+			<SinglePost />
 		</div>
 	);
 }
