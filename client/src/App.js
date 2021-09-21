@@ -8,7 +8,11 @@
 // 	Route
 // } from "react-router-dom"
 // import Settings  from "./pages/settings/Settings"
-import SinglePost  from "./components/singlePost/SinglePost"
+// import SinglePost  from "./components/singlePost/SinglePost"
+
+import Write from "./pages/write/Write";
+
+// import Single from "./pages/single/Single";
 
 
 function App() {
@@ -32,7 +36,10 @@ function App() {
 		// </Router>
 		<div>
 			{/* <Settings /> */}
-			<SinglePost />
+			{/* <SinglePost /> */}
+
+			{/* <Single /> */}
+			<Write />
 		</div>
 	);
 }
