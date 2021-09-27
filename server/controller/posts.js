@@ -1,12 +1,13 @@
 const Post = require("../models/Post")
+const User = require("../models/User")
 
 
 module.exports = {
           // create post
           createPost: async(req, res) => {
+                    const newPost = new Post(req.body)
 
                     try {
-                              const newPost = new Post(req.body)
 
                               const savedPost  = await newPost.save()
 
@@ -71,8 +72,33 @@ module.exports = {
                     try {
                               const post = await Post.findById(req.params.id)
                               res.status(200).json(post)
+                              
                     } catch (err) {
                               res.status(500).json(err)
+                    }
+          },
+
+          // get a user all posts
+          getUserAllPosts: async (req, res) => {
+
+                    try {
+                              const user = await User.findOne(
+                                        {
+                                                  username: req.params.username
+                                        }
+                              )
+                              
+                              const posts = await Post.find(
+                                        {
+                                                  username: user.username
+                                        }
+                              )
+
+                              res.status(200).json(posts)
+
+                    } catch (err) {
+                              res.status(500).json(err)
+                              console.log(err)
                     }
           },
 

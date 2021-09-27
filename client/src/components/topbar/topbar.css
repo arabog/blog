@@ -17,6 +17,16 @@
           flex: 6;
 }
 
+.topImg {
+          margin-right: 20px;
+          margin-top: 10px;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          object-fit: cover;
+          cursor: pointer;
+}
+
 .topList {
           display: flex;
           justify-content: center;

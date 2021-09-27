@@ -8,12 +8,12 @@ const postRoute = require("./routes/posts");
 const categoryRoute = require("./routes/categories");
 const multer = require("multer");
 const path = require("path");
-const port = process.env.PORT || 6000
+const port = process.env.PORT || 9000
 
 
 dotenv.config({path: "./config/.env"});
 app.use(express.json());
-app.use("/images", express.static(path.join(__dirname, "/images")));
+app.use("/images", express.static(path.join(__dirname, "public/images")));
 
 
 connectDB()
@@ -21,7 +21,7 @@ connectDB()
 
 const storage = multer.diskStorage({
 	destination: (req, file, cb) => {
-		cb(null, "images");
+		cb(null, "public/images");
 	},
 
 	filename: (req, file, cb) => {
@@ -32,7 +32,11 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 app.post("/api/upload", upload.single("file"), (req, res) => {
-	res.status(200).json("File has been uploaded");
+	try{
+		return res.status(200).json("File has been uploaded");
+	}catch(err) {
+		console.error(err)
+	}
 });
 
 app.use("/api/auth", authRoute);

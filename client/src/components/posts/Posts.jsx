@@ -1,9 +1,14 @@
 import "./posts.css"
+import Post from "../post/Post"
 
-export default function Posts() {
+export default function Posts( { posts } ) {
           return (
-                    <div>
-                              Posts from me
+                    <div className="posts">
+                              {
+                                        posts.map(p => (
+                                                  <Post post={p} key={p._id} />
+                                        ))
+                              }
                     </div>
           )
 }

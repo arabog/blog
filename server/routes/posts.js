@@ -13,10 +13,13 @@ router.put("/:id", postsController.updatePost)
 router.delete("/:id", postsController.delPost)
 
 
-// get a post
+// get a user post
 router.get("/:id", postsController.getApost)
 
-// get all post (find/search)
+// get all user posts 
+router.get("/blog/:username", postsController.getUserAllPosts)
+
+// get all posts (find/search)
 router.get("/", postsController.getAllPost)
 
 
